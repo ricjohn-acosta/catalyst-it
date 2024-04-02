@@ -24,7 +24,7 @@ class DB {
             $this->pdo->exec("
             CREATE DATABASE IF NOT EXISTS catalyst;
             USE catalyst;
-            CREATE TABLE users (Email varchar(255) UNIQUE, Name varchar(255), Username varchar(255))
+            CREATE TABLE users (id int primary key auto_increment ,email varchar(255) UNIQUE, name varchar(255), surname varchar(255))
         ");
             echo "users table created";
         } catch (PDOException $exception) {
