@@ -1,5 +1,4 @@
 <?php
-//echo print_r($argv);
 require_once "db.php";
 
 global $db;
@@ -11,13 +10,15 @@ if (isset($argv)) {
     }
 
     if (in_array("--file", $argv)) {
-        $file = NULL;
+        $filename = NULL;
+
         foreach ($argv as $arg) {
             if (str_contains($arg, "csv")) {
-                $file = $arg;
+                $filename = $arg;
             }
         }
-        echo $file ? "Importing {$file}.." : "Incorrect usage. (e.g: --file users.csv)";
+
+        echo $filename ? "Importing {$filename}.." : "Incorrect usage. (e.g: --file users.csv)";
         return;
     }
 
