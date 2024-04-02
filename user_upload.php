@@ -1,5 +1,6 @@
 <?php
 require_once "db.php";
+require_once "./controllers/user_upload.php";
 
 global $db;
 
@@ -18,7 +19,12 @@ if (isset($argv)) {
             }
         }
 
-        echo $filename ? "Importing {$filename}.." : "Incorrect usage. (e.g: --file users.csv)";
+        if ($filename) {
+            $uploader = new User_upload();
+            $uploader->upload($filename);
+        } else {
+            echo "Incorrect usage. (e.g: --file users.csv)";
+        }
         return;
     }
 
