@@ -1,5 +1,8 @@
 <?php
 //echo print_r($argv);
+require_once "db.php";
+
+global $db;
 
 if (isset($argv)) {
     if (in_array("--help", $argv)) {
@@ -15,6 +18,11 @@ if (isset($argv)) {
             }
         }
         echo $file ? "Importing {$file}.." : "Incorrect usage. (e.g: --file users.csv)";
+        return;
+    }
+
+    if (in_array("--create_table", $argv)) {
+        $db->create();
         return;
     }
 
