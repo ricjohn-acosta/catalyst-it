@@ -1,13 +1,16 @@
 <?php
 class DB {
-    private $dsn = "mysql:host=localhost";
     private $dbUsername = "root";
     private $dbPassword = "";
+    private $dbHost = "localhost";
+    private $dsn = "mysql:host=localhost";
     private PDO $pdo;
 
-    public function __construct($dbUsername = "root", $dbPassword = "") {
+    public function __construct($dbUsername = "root", $dbPassword = "", $dbHost = "localhost")
+    {
         $this->dbUsername = $dbUsername;
         $this->dbPassword = $dbPassword;
+        $this->dsn = "mysql:host={$dbHost}";
     }
 
     public function connect(): PDO {
