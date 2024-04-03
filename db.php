@@ -13,7 +13,8 @@ class DB {
         $this->dsn = "mysql:host={$dbHost}";
     }
 
-    public function connect(): PDO {
+    public function connect(): PDO
+    {
         try {
             $this->pdo = new PDO($this->dsn, $this->dbUsername, $this->dbPassword);
         } catch (PDOException $exception) {
@@ -22,7 +23,8 @@ class DB {
         return $this->pdo;
     }
 
-    public function create() {
+    public function create(): void
+    {
         try {
             $this->pdo->exec("
             CREATE DATABASE IF NOT EXISTS catalyst;
@@ -36,7 +38,8 @@ class DB {
 
     }
 
-    public function getPDO(): PDO {
+    public function getPDO(): PDO
+    {
         return $this->pdo;
     }
 
