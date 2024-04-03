@@ -7,7 +7,6 @@ class User {
     public function __construct()
     {
         global $db;
-        $db->connect();
         $this->pdo = $db->getPDO();
     }
 
