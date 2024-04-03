@@ -17,3 +17,7 @@
 1. The `--create_table` flag has to be ran before `--file` or `--dry_run`
 2. Running `--create_table` flag when table already exists creates a new table.
 3. The `--file [csv file name]` flag does not create the database and table automatically.
+
+### AI Use:
+- Only used AI to debug a weird error `SQLSTATE[IM001]: Driver does not support this function` 
+which did not even give me any correct answers after figuring it out myself.
