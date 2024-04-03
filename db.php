@@ -27,6 +27,7 @@ class DB {
     {
         try {
             $this->pdo->exec("
+            DROP DATABASE IF EXISTS catalyst;
             CREATE DATABASE IF NOT EXISTS catalyst;
             USE catalyst;
             CREATE TABLE users (id int primary key auto_increment ,email varchar(255) UNIQUE, name varchar(255), surname varchar(255))
