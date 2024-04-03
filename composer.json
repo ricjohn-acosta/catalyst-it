@@ -1,4 +1,7 @@
 {
+  "name": "catalyst/it",
+  "description": "PHP Script for catalyst it coding test",
+  "version": "1.0.0",
   "require": {
     "ext-pdo": "*"
   }
