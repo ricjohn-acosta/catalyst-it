@@ -70,3 +70,21 @@ if (isset($argv)) {
     echo "Invalid command!";
 }
 
+function upload_file($filename, $dry_run = false): void
+{
+    $uploader = new User_upload();
+    $uploader->upload($filename, $dry_run);
+}
+
+function get_file($argv): string
+{
+    $filename = NULL;
+
+    foreach ($argv as $arg) {
+        if (str_contains($arg, "csv")) {
+            $filename = $arg;
+        }
+    }
+
+    return $filename;
+}
