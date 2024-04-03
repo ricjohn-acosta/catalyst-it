@@ -7,21 +7,24 @@ global $db;
 if (isset($argv)) {
     if (in_array("--help", $argv)) {
         echo "
-         ########################################################################################
-         
-            Welcome to CatalystCRM! Your one stop shop for your user uploading needs!
-            
-            You may use the following flags:
-            
-            --file [csv file name]  = upload users into the database
-            --create_table          = creates a users table in mysql  
-            --dry_run               = to be used in conjunction with --file flag to run the application without modifying the database
-            -u                      = display mysql username
-            -p                      = display mysql password
-            -h                      = display mysql host
-            --help                  = display help menu
-         
-         ########################################################################################
+         ###################################################################################################
+         #                                                                                                 #
+         #   Welcome to Catalyst User Uploader! Your one stop shop for your user uploading needs!          #
+         #                                                                                                 #
+         #   You may use the following flags:                                                              #
+         #                                                                                                 #
+         #   --file [csv file name]  = upload users into the database                                      #
+         #   --create_table          = creates a users table in mysql                                      #
+         #   --dry_run               = to be used in conjunction with --file flag to run the application   #
+         #                             without modifying the database                                      #
+         #                             e.g: php user_upload.php --dry_run --file users.csv                 #
+         #                                                                                                 #
+         #   -u                      = display mysql username                                              #
+         #   -p                      = display mysql password                                              #
+         #   -h                      = display mysql host                                                  #
+         #   --help                  = display help menu                                                   #
+         #                                                                                                 #
+         ###################################################################################################
         ";
         return;
     }
