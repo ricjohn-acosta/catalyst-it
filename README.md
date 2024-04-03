@@ -1,4 +1,7 @@
-https://github.com/ricjohn-acosta/catalyst-it/assets/41725332/bee84b59-c3a0-4d7b-b639-ae5c3d132d4f
+
+
+https://github.com/ricjohn-acosta/catalyst-it/assets/41725332/69e9cab9-1b05-4645-927b-89aee9292a66
+
 
 ### How to run:
 
