@@ -1,3 +1,8 @@
+
+
+https://github.com/ricjohn-acosta/catalyst-it/assets/41725332/69e9cab9-1b05-4645-927b-89aee9292a66
+
+
 ### How to run:
 
 #### User upload challenge
@@ -11,7 +16,6 @@
 
 #### Foobar challenge
 1. Navigate into the cloned repository and run `php foobar.php`
-
 
 ### Assumptions:
 1. The `--create_table` flag has to be ran before `--file` or `--dry_run`
