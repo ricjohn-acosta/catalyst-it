@@ -18,7 +18,7 @@ class DB {
         try {
             $this->pdo = new PDO($this->dsn, $this->dbUsername, $this->dbPassword);
         } catch (PDOException $exception) {
-            echo 'Connection failed: ' . $exception->getMessage();
+            fwrite(STDOUT, "Connection failed: {$exception->getMessage()}");
         }
         return $this->pdo;
     }
@@ -32,9 +32,9 @@ class DB {
             DROP TABLE IF EXISTS users;
             CREATE TABLE users (id int primary key auto_increment ,email varchar(255) UNIQUE, name varchar(255), surname varchar(255))
         ");
-            echo "users table created";
+            fwrite(STDOUT, "`users` table created");
         } catch (PDOException $exception) {
-            echo $exception->getMessage();
+            fwrite(STDOUT, "{$exception->getMessage()}");
         }
 
     }
