@@ -36,6 +36,21 @@ class DB {
     public function getPDO(): PDO {
         return $this->pdo;
     }
+
+    public function getDbUsername(): string
+    {
+        return $this->dbUsername;
+    }
+
+    public function getDbPassword(): string
+    {
+        return $this->dbPassword;
+    }
+
+    public function getDbHost(): string
+    {
+        return $this->dbHost;
+    }
 }
 
 $db = new DB();

@@ -52,6 +52,21 @@ if (isset($argv)) {
         return;
     }
 
+    if (in_array("-p", $argv)) {
+        echo "MySQL password: {$db->getDbPassword()}";
+        return;
+    }
+
+    if (in_array("-u", $argv)) {
+        echo "MySQL username: {$db->getDbUsername()}";
+        return;
+    }
+
+    if (in_array("-h", $argv)) {
+        echo "MySQL host: {$db->getDbHost()}";
+        return;
+    }
+
     echo "Invalid command!";
 }
 
