@@ -11,7 +11,7 @@ class User {
         $this->pdo = $db->getPDO();
     }
 
-    public function add($name, $surname, $email)
+    public function add($name, $surname, $email, $dry_run): void
     {
         if (!$this->validate_email($email)) {
             fwrite(STDOUT, "\nFailed to upload user {$surname}. Invalid email - {$email}.\n");
@@ -27,8 +27,8 @@ class User {
             '
             );
 
-            if ($result === 0) {
-                echo "\nSuccessfully uploaded user!\n";
+            if ($query_result === 0 || $dry_run) {
+                echo "\nSuccessfully uploaded user {$name}\n";
             }
 
         } catch (PDOException $exception) {

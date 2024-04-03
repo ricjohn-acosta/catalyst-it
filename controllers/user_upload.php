@@ -10,7 +10,7 @@ class User_upload {
         $this->user = new User();
     }
 
-    public function upload($filename): void
+    public function upload($filename, $dry_run): void
     {
         if (($handle = fopen($filename, "r")) !== FALSE) {
             fgetcsv($handle);
@@ -19,7 +19,7 @@ class User_upload {
                 $name = $data[0];
                 $surname = $data[1];
                 $email = $data[2];
-                $this->user->add($name, $surname, $email);
+                $this->user->add($name, $surname, $email, $dry_run);
             }
             fclose($handle);
         }

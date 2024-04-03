@@ -29,21 +29,30 @@ if (isset($argv)) {
         return;
     }
 
-    if (in_array("--file", $argv)) {
-        $filename = NULL;
-
-        foreach ($argv as $arg) {
-            if (str_contains($arg, "csv")) {
-                $filename = $arg;
-            }
-        }
+    if (in_array("--file", $argv) && !in_array("--dry_run", $argv)) {
+        $filename = get_file($argv);
 
         if ($filename) {
-            $uploader = new User_upload();
-            $uploader->upload($filename);
+            upload_file($filename);
         } else {
-            echo "Incorrect usage. (e.g: --file users.csv)";
+            echo "Incorrect usage. (e.g: php user_upload.php --file users.csv)";
         }
+
+        return;
+    }
+
+    if (in_array("--dry_run", $argv) && in_array("--file", $argv)) {
+        $filename = get_file($argv);
+
+        if ($filename) {
+            upload_file($filename, true);
+        } else {
+            echo "Incorrect usage. (e.g: php user_upload.php --dry_run --file users.csv)";
+        }
+
+        return;
+    } else if (in_array("--dry_run", $argv)){
+        echo "Incorrect usage. (e.g: php user_upload.php --dry_run --file users.csv)";
         return;
     }
 
