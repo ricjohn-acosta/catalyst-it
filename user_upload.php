@@ -30,6 +30,11 @@ if (isset($argv)) {
     }
 
     if (in_array("--file", $argv) && !in_array("--dry_run", $argv)) {
+        if (!$db->database_exists()) {
+            echo "Table does not exist! You may need to run php user_upload.php --create_table first.";
+            return;
+        }
+
         $filename = get_file($argv);
 
         if ($filename) {
@@ -42,6 +47,11 @@ if (isset($argv)) {
     }
 
     if (in_array("--dry_run", $argv) && in_array("--file", $argv)) {
+        if (!$db->database_exists()) {
+            echo "Table does not exist! You may need to run php user_upload.php --create_table first.";
+            return;
+        }
+
         $filename = get_file($argv);
 
         if ($filename) {

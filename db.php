@@ -58,6 +58,17 @@ class DB {
     {
         return $this->dbHost;
     }
+
+    public function database_exists(): bool
+    {
+        $result = $this->pdo->query(
+            "
+                SHOW DATABASES LIKE 'catalyst';
+            "
+        )->fetchAll();
+
+        return sizeof($result) !== 0;
+    }
 }
 
 $db = new DB();
