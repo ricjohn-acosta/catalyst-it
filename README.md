@@ -14,9 +14,6 @@ https://github.com/ricjohn-acosta/catalyst-it/assets/41725332/69e9cab9-1b05-4645
    2. Run `php user_upload.php --file users.csv` to populate the table.
    3. Run `php user_upload.php --help` to see a list of flags that can be used.
 
-#### Foobar challenge
-1. Navigate into the cloned repository and run `php foobar.php`
-
 ### Assumptions:
 1. The `--create_table` flag has to be ran before `--file` or `--dry_run`
 2. Running `--create_table` flag when table already exists creates a new table.
